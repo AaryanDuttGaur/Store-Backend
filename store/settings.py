@@ -304,12 +304,17 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-change-this-to-a-stro
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 # ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = [
+#     'localhost',
+#     '127.0.0.1',
+#     '.railway.app',
+# ]
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     '.railway.app',
+    '.onrender.com',  # Add this line
 ]
-
 
 # Application definition
 INSTALLED_APPS = [
@@ -453,8 +458,14 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3000",   # Alternative localhost
 ]
 CORS_ALLOW_CREDENTIALS = True
+# CSRF_TRUSTED_ORIGINS = [
+#     'https://*.railway.app',
+#     'http://localhost:3000',
+#     'http://127.0.0.1:3000',
+# ]
 CSRF_TRUSTED_ORIGINS = [
     'https://*.railway.app',
+    'https://*.onrender.com',
     'http://localhost:3000',
     'http://127.0.0.1:3000',
 ]
